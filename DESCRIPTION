@@ -1,0 +1,19 @@
+Package: incucyter
+Type: Package
+Title: Analysing IncuCyte ZOOM® data in R
+Version: 0.1.0
+Authors@R: person("Florian", "Uhlitz", email = "uhlitz@hu-berlin.de",
+  role = c("aut", "cre"))
+Description: This package can read and plot incucyte metrics. Multiple runs can be batch processed and compared.
+License: GPL-3 + file LICENSE
+URL: https://github.com/uhlitz/incucyter
+BugReports: https://github.com/uhlitz/incucyter/issues
+LazyData: TRUE
+Imports:
+    tidyverse,
+    stringr
+RoxygenNote: 5.0.1
+Suggests: testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

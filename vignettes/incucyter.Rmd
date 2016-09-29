@@ -1,0 +1,19 @@
+---
+title: "incucyter"
+author: "Florian Uhlitz"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{incucyter}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Examples
+
+```{r}
+
+library(incucyter)
+
+```
+

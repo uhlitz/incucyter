@@ -1,0 +1,16 @@
+---
+title: "idconv"
+output: github_document
+---
+
+`incucyter` can read and plot IncuCyte ZOOM® metrics. 
+Multiple runs can be batch processed and compared.
+
+# Installation  
+
+```
+
+devtools::install_github("uhlitz/incucyter")
+
+```
+
