@@ -5,7 +5,7 @@ read_incu_single <- function(file, delay, per_image) {
                      { setNames(.$value, .$key) } %>%
     as.list %>%
     as_data_frame %>%
-    setNames(make.names(names(.)))
+    setNames(make.names(names(.)) %>% str_replace_all("\\.", "_"))
 
   result <- read_tsv(file, skip = 7, locale = locale(decimal_mark = ",")) %>%
     setNames(gsub(": ", "", names(.)) %>% gsub(" ", "_", .)) %>%
@@ -18,11 +18,14 @@ read_incu_single <- function(file, delay, per_image) {
       mutate(Well = str_replace_all(Well, "_Image_", "")) %>%
       separate(Well, into = c("WellY", "WellX"), sep = 1, remove = F) %>%
       separate(WellX, into = c("WellX", "img"), sep = ",") %>%
-      mutate(Well = paste0(WellY, WellX))
+      mutate(Well = paste0(WellY, WellX),
+             WellX = as.numeric(WellX),
+             img = as.numeric(img))
 
   } else {
 
-    result <- separate(result, Well, into = c("WellY", "WellX"), sep = 1, remove = F)
+    result <- separate(result, Well, into = c("WellY", "WellX"), sep = 1, remove = F) %>%
+      mutate(WellX = as.numeric(WellX))
 
   }
 

@@ -9,19 +9,20 @@ read_incu(file, annotation = NULL, delay = 0, per_image = T)
 \arguments{
 \item{file}{Metrics file exported with IncuCyte ZOOM® software.}
 
-\item{annotation}{Annotation file with at least three columns: Well (e.g. "A1"), Treatment (e.g. "ctrl") and Reference (can be multiple e.g. "A1,B1"), and one row per well.}
+\item{annotation}{Annotation file with at least four columns: Analysis_Job (e.g. "Experiment_I"), Well (e.g. "A1"), Treatment (e.g. "ctrl") and Reference (can be multiple e.g. "A1,B1"), and one row per well.}
 
 \item{delay}{Time between treatment and first image acquisition in minutes (default 0).}
 
-\item{per_image}{Were metrics exported per image or grouped by well (TRUE or FALSE, default TRUE)?}
+\item{per_image}{IncuCyte ZOOM® can export values per image or export mean values per well. Hence, set per_image = T or F depending on your export settings.}
 }
 \value{
 A tibble of incucyte metrics.
 }
 \description{
-\code{read_incu} reads incucyte metrics. Please provide an annotation table for downstream analyses.
+\code{read_incu()} reads incucyte metrics. Please provide an annotation table for downstream analyses.
 }
 \examples{
-read_incu(file = system.file("extdata", "sample_data_GO_Confluence_percent.txt", package = "incucyter"), annotation = system.file("extdata", "sample_data_annotation.tsv", package = "incucyter"))
+read_incu(file = system.file("extdata", "sample_data_GO_Confluence_percent.txt", package = "incucyter"),
+annotation = system.file("extdata", "sample_data_annotation.tsv", package = "incucyter"))
 }
 
