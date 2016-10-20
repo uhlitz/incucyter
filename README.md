@@ -50,9 +50,9 @@ incu_tbl <- read_incu(file = example_data,
                       annotation = example_annotation)
 ```
 
-Your annotation table must contain three columns: Analysis\_Job, Well, Treatment, Reference. To annotate your table, you can use `read_incu` with a file path to a tab delimited annotation file or with a R `data.frame`.
+Your annotation table must contain four columns: *Analysis\_Job*, *Well*, *Treatment* and *Reference*. You can freely add other columns and use these columns to summarise your data for plotting or summary statistics.
 
-You can freely add other columns and use these columns to summarise your data for plotting or summary statistics.
+To annotate your table, you can use `read_incu` with a file path to a tab delimited annotation file or with a R `data.frame`.
 
 An example annotation can look like this:
 
